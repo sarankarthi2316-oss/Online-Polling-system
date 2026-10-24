@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voter Details - Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .voter-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #1e293b; color: white; border-radius: 10px; overflow: hidden; }
+        .voter-table th, .voter-table td { padding: 15px; text-align: left; border-bottom: 1px solid #334155; }
+        .voter-table th { background: #334155; color: #fbbf24; text-transform: uppercase; }
+        .status-badge { padding: 5px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        .voted { background: #10b981; color: white; }
+        .not-voted { background: #ef4444; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registered Voter List</h2>
+        <table class="voter-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Voting Status</th>
+                </tr>
+            </thead>
+            <tbody id="voterTableBody">
+                </tbody>
+        </table>
+        <br>
+        <a href="admin.html" style="color: #94a3b8;">← Back to Admin Panel</a>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container dashboard-container">
+        <h2 id="welcomeMsg">Welcome, User!</h2>
+
+        <!-- Dashboard features -->
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Voting Status</h3>
+                <p id="voteStatus">Not Voted Yet</p>
+            </div>
+            <div class="card">
+                <h3>Next Election</h3>
+                <p>Upcoming voting session in 5 days</p>
+            </div>
+            <div class="card">
+                <h3>Info</h3>
+                <p>Users can vote only once in each election.</p>
+            </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="dashboard-links">
+            <a href="vote.html" class="btn" id="goVote">Go to Voting Page</a>
+            <a href="index.html" id="logoutBtn" class="btn">Logout</a>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

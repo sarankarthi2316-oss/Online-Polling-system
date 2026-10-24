@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Election Results</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #0f172a; color: white; font-family: 'Segoe UI', sans-serif; }
+        .results-container { max-width: 1000px; margin: 50px auto; padding: 20px; }
+        
+        /* Dynamic Winner Card */
+        .winner-box {
+            background: linear-gradient(135px, #1e293b 0%, #334155 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid #3b82f6;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 40px;
+        }
+
+        .winner-active {
+            border-color: #fbbf24;
+            box-shadow: 0 0 50px rgba(251, 191, 36, 0.3);
+            transform: translateY(-10px);
+        }
+
+        #leadingCandidate {
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #fbbf24, #f59e0b);
+    
+    /* Add these three lines together for full compatibility */
+    -webkit-background-clip: text; /* For Chrome, Safari, Edge */
+    background-clip: text;         /* The standard property (fixes your error) */
+    -webkit-text-fill-color: transparent; 
+    
+    font-weight: 800;
+    margin: 10px 0;
+}
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .chart-card { background: #1e293b; padding: 20px; border-radius: 15px; }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <div id="winnerCard" class="winner-box">
+            <h2 style="color: #94a3b8; text-transform: uppercase; letter-spacing: 3px;">Leading Candidate</h2>
+            <p id="leadingCandidate">Waiting for data...</p>
+            <p style="font-size: 1.2rem;">Total Votes Logged: <span id="totalVotes" style="color: #fbbf24;">0</span></p>
+        </div>
+
+        <div class="chart-grid">
+            <div class="chart-card">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="admin.html" style="color: #94a3b8; text-decoration: none;">← Back to Admin Panel</a>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

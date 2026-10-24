@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Now</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container vote-container">
+        <h2>Cast Your Vote</h2>
+        <form id="voteForm" class="vote-form">
+            <div class="candidates">
+                <div class="candidate-card">
+                    <h3>Candidate A</h3>
+                    <p>Party: Blue</p>
+                    <input type="radio" name="candidate" value="Candidate A" required>
+                </div>
+                <div class="candidate-card">
+                    <h3>Candidate B</h3>
+                    <p>Party: Red</p>
+                    <input type="radio" name="candidate" value="Candidate B">
+                </div>
+                <div class="candidate-card">
+                    <h3>Candidate C</h3>
+                    <p>Party: Yellow</p>
+                    <input type="radio" name="candidate" value="Candidate C">
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit Vote</button>
+        </form>
+        <a href="dashboard.html" class="btn back-btn">Back to Dashboard</a>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

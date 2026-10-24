@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   // If this is here, it might be sending you away!
+<script>
+    // 1. Grab the user data
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    // 2. If no user or not admin, go back to login
+    if (!user || user.role !== 'admin') {
+        window.location.href = 'index.html'; 
+    }
+</script>
+</head>
+<body class="admin-body">
+
+<div class="admin-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>ElectoMaze</h2>
+        <ul>
+            <li class="active">Dashboard</li>
+            <li> 
+                <a href="results.html">Results</a></li>
+            <li>
+                <a href="voter-details.html" id="button">Voter detalis</a>
+            </li>
+            <li>
+               <a href="index.html" id="logoutBtn">Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Election Results</h1>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3 id="totalVotes">11</h3>
+                <p>Total Votes</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="totalVoters">5</h3>
+                <p>Total Voters</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="leadingCandidate">Candidate A</h3>
+                <p>Leading Candidate</p>
+            </div>
+        </div>
+
+        <!-- Charts -->
+<div class="charts-container">
+    <div style="width: 400px; margin: 20px auto;">
+        <h3>Bar Chart</h3>
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <div style="width: 300px; margin: 20px auto;">
+        <h3>Pie Chart</h3>
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <div style="width: 300px; margin: 20px auto;">
+        <h3>Doughnut Chart</h3>
+        <canvas id="doughnutChart"></canvas>
+    </div>
+</div>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
